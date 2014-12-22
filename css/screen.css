@@ -20,9 +20,11 @@ ul, ol { list-style-type: none; }
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) { * { -webkit-text-size-adjust: none; } }
 table { border-spacing: 0; border-collapse: collapse; width: 100%; }
 
-body { font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; }
+body { font-family: Arial, sans-serif; font-size: 12px; line-height: 1.4; background: white; }
 
-.l { *zoom: 1; }
-.l:after { content: " "; display: table; clear: both; }
-.l .l-col1 { float: left; width: 20%; }
-.l .l-col2 { float: right; width: 70%; }
+.out { position: relative; }
+.out_index { position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; }
+
+.header { position: absolute; top: 0; right: 0; left: 0; }
+.header__top { *zoom: 1; height: 70px; line-height: 70px; background: rgba(31, 26, 23, 0.2); }
+.header__top:after { content: " "; display: table; clear: both; }
