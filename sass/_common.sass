@@ -68,33 +68,46 @@ $gray: #625c57
 =tr_o
 	+tr(opacity .3s)
 	will-change: opacity
+.has-open-nav
+	.line-bg,
+	.header__top,
+	.footer
+		background: #1f1a17 !important
 body
-	min-width: 1300px
+	//min-width: 1300px
 	+hel 
 	font-size: 12px 
 	line-height: 1.8
 	letter-spacing: 2px
 	color: #fff 
 	color: rgba(#fff,.5) 
+	background: #423b38 
+.index-page
+	margin: 0
+	padding: 0
+	overflow: hidden
+	//Avoid flicker on slides transitions for mobile phones #336
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 a
 	text-decoration: none
 // common blocks      
 .l-center
 	margin: 0 auto 
-	width: 1155px
+	padding: 0 30px 
+	max-width: 1205px
 	+clr
 	+r(1400)
-		width: 1000px
-.out
-	position: relative
+		max-width: 1060px
+// .out
+// 	position: relative
 	
-.out_index
-	position: absolute
-	top: 0
-	right: 0
-	bottom: 0
-	left: 0
-	overflow: hidden
+// .out_index
+// 	position: absolute
+// 	top: 0
+// 	right: 0
+// 	bottom: 0
+// 	left: 0
+// 	overflow: hidden
 .line-bg
 	position: absolute
 	top: 0
@@ -104,25 +117,29 @@ a
 	background: rgba(#1f1a17, .2)
 	+tr_bg
 	&.has-hover
-		background: rgba(#1f1a17, .8)
+		background: rgba(#1f1a17, .7)
 .line-bg_left
 	left: 0
 .line-bg_right
 	right: 0
-.nav	
+.menu	
 	position: absolute
-	top: 100%
+	z-index: 11
+	margin-top: 70px
 	left: 0
 	right: 0
 	padding: 60px 0 
 	background: #1f1a17 url(../img/nav.jpg) 100% 100% no-repeat
-	z-index: 3 
+	+tr(transform .7s)
+	+transform(translateY(-200%))
+	&.is-active
+		+transform(translateY(0))
 	.btn
 		margin-top: 22px
-.nav__col
+.menu__col
 	float: left
 	margin-right: 100px
-.nav__title
+.menu__title
 	margin-bottom: 63px
 	font-size: 30px
 	+light
@@ -136,7 +153,7 @@ a
 		&:hover
 			color: #fff 
 			border-color: transparent 
-.nav__list
+.menu__list
 	li
 		margin-bottom: 15px
 		&.is-marked
@@ -191,10 +208,14 @@ a
 	top: 0
 	right: 20px
 	left: 20px
-	z-index: 2
+	z-index: 12
+	.l-center
+		+r(1280)
+			max-width: 100%
+			padding: 0 130px 
 	&.has-hover
 		.header__top
-			background: rgba(#1f1a17, .8)
+			background: rgba(#1f1a17, .7)
 .header__top
 	+clr
 	height: 70px
@@ -202,7 +223,7 @@ a
 	font-size: 0
 	+tr_bg
 	background: rgba(#1f1a17, .2)
-.header__nav
+.header__menu
 	float: left
 	position: absolute
 	left: 0
@@ -217,18 +238,23 @@ a
 	letter-spacing: 2px 
 	text-transform: uppercase
 	font-size: 11px
-
 	&:hover
-		color: #fff 
 		i
 			background: $brown
 			&:before
 				+transform(translateY(-5px))
 			&:after
 				+transform(translateY(5px))
+		span
+			opacity: 0
 	&.is-active
 		i
 			background: $brown 
+			+rotate(-90)
+			&:before
+				top: -9px
+			&:after
+				bottom: -9px
 	i
 		position: absolute
 		left: 0
@@ -236,7 +262,8 @@ a
 		width: 44px
 		height: 1px
 		background: #fff 
-		+tr_bg
+		will-change: transform
+		+transition(background .3s, transform .5s)
 		&:before,
 		&:after
 			content: "" 
@@ -250,6 +277,8 @@ a
 			top: -9px
 		&:after
 			bottom: -9px
+	span
+		+tr_o
 .header__logo
 	display: inline-block
 	height: 70px
@@ -289,6 +318,15 @@ a
 	font-size: 11px
 	text-transform: uppercase
 	background: none
+	&:hover
+		&:before
+			left: -1px
+		&:after
+			top: -1px
+	&:active
+		background: $brown
+		color: #fff
+		border-color: $brown   
 	&:before
 		content: "" 
 		position: absolute
@@ -297,6 +335,7 @@ a
 		bottom: -3px
 		height: 3px
 		background: $brown 
+		+tr(left .3s)
 	&:after
 		content: "" 
 		position: absolute
@@ -305,6 +344,7 @@ a
 		bottom: -3px
 		width: 3px
 		background: $brown 
+		+tr(top .3s)
 .footer
 	position: absolute
 	right: 20px
@@ -315,7 +355,7 @@ a
 	background: rgba(#1f1a17, .2)
 	+tr_bg
 	&.has-hover
-		background: rgba(#1f1a17, .8)
+		background: rgba(#1f1a17, .7)
 	a
 		display: inline-block
 		color: #fff
@@ -349,8 +389,6 @@ a
 		vertical-align: middle
 		margin-right: 13px
 		+s(pin)
-
-
 
 
 

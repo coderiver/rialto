@@ -1,27 +1,21 @@
 <!doctype html>
-<html>
+<html class="index-page">
 <head>
 	<meta charset="utf-8">
 	<title>Template</title>
-	<meta name="format-detection" content="telephone=no">
-	<meta name="viewport" content="width=1200">
-	<!-- <meta name="viewport" content="initial-scale=1, user-scalable=no"> -->
 	<link rel="stylesheet" media="all" href="css/screen.css">
 	<script src="js/lib/jquery.js"></script>
-	<!-- <script src="vendors/jquery.easings.min.js"></script> -->
-	<!-- This following line needed in the case of using the plugin option `scrollOverflow:true` -->
-	<!-- <script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script> -->
+	<script src="js/lib/jquery.easings.min.js"></script>
 	<script src="js/lib/jquery.fullPage.min.js"></script>
 	<script src="js/common.js"></script>
 	<!--[if IE]><script src="js/html5shiv.js"></script><![endif]-->
 </head>
 <body>
-<!-- BEGIN  out-->
-<div class="out out_index">
+
 	<!-- BEGIN header -->
 	<div class="header js-hover">
 		<div class="header__top">
-			<button class="header__nav" type="button">
+			<button class="header__menu js-menu-toggle" type="button">
 				<i></i>
 				<span>Меню</span>
 			</button>
@@ -32,65 +26,150 @@
 			</div>
 			<a href="#" class="header__link">Шоурум</a>
 		</div>
-		<div class="nav">
-			<div class="l-center">
-				<div class="nav__col">
-					<div class="nav__title"><a href="#">Компания</a></div>
-					<ul class="nav__list">
-						<li class="is-marked"><a href="#">акции</a></li>
-						<li><a href="#">Шоурум</a></li>
-						<li><a href="#">Услуги</a></li>
-						<li><a href="#">Портфолио</a></li>
-						<li><a href="#">Бренды</a></li>
-						<li><a href="#">Вакансии</a></li>
-						<li><a href="#">Новости</a></li>
-					</ul>
-				</div>
-				<div class="nav__col">
-					<div class="nav__title"><a href="#">Каталог</a></div>
-					<ul class="nav__list">
-						<li><a href="#">Плитка</a></li>
-						<li><a href="#">Сантехника</a></li>
-						<li><a href="#">Мебель</a></li>
-						<li><a href="#">Паркет</a></li>
-						<li><a href="#">Двери</a></li>
-						<li><a href="#">Свет</a></li>
-						<li><a href="#">кухни</a></li>
-					</ul>
-				</div>
-				<div class="nav__col">
-					<div class="nav__title"><a href="#">Контактная информация</a></div>
-					<div class="address">
-						<div class="address__title">Адрес:</div>
-						<div class="address__main">г. Минск, ул. Сурганова 61А, БЦ Зебра</div>
-					</div>
-					<div class="address">
-						<div class="address__title">Телефоны: </div>
-						<div class="address__main">+375 29 331-86-23 | +375 29 617-09-73</div>
-					</div>
-					<div class="address">
-						<div class="address__title">e-mail: </div>
-						<div class="address__main">
-							<a href="mailto:rialto@rialtogroup.by">rialto@rialtogroup.by</a>
-						</div>
-					</div>
-					<a href="#" class="btn">Обратный звонок</a>
-				</div>
-			</div>
-		</div>
 	</div>
 	<!-- END header -->
 
+	<!-- END nav -->
+	<div class="menu js-menu">
+		<div class="l-center">
+			<div class="menu__col">
+				<div class="menu__title"><a href="#">Компания</a></div>
+				<ul class="menu__list">
+					<li class="is-marked"><a href="#">акции</a></li>
+					<li><a href="#">Шоурум</a></li>
+					<li><a href="#">Услуги</a></li>
+					<li><a href="#">Портфолио</a></li>
+					<li><a href="#">Бренды</a></li>
+					<li><a href="#">Вакансии</a></li>
+					<li><a href="#">Новости</a></li>
+				</ul>
+			</div>
+			<div class="menu__col">
+				<div class="menu__title"><a href="#">Каталог</a></div>
+				<ul class="menu__list">
+					<li><a href="#">Плитка</a></li>
+					<li><a href="#">Сантехника</a></li>
+					<li><a href="#">Мебель</a></li>
+					<li><a href="#">Паркет</a></li>
+					<li><a href="#">Двери</a></li>
+					<li><a href="#">Свет</a></li>
+					<li><a href="#">кухни</a></li>
+				</ul>
+			</div>
+			<div class="menu__col">
+				<div class="menu__title"><a href="#">Контактная информация</a></div>
+				<div class="address">
+					<div class="address__title">Адрес:</div>
+					<div class="address__main">г. Минск, ул. Сурганова 61А, БЦ Зебра</div>
+				</div>
+				<div class="address">
+					<div class="address__title">Телефоны: </div>
+					<div class="address__main">+375 29 331-86-23 | +375 29 617-09-73</div>
+				</div>
+				<div class="address">
+					<div class="address__title">e-mail: </div>
+					<div class="address__main">
+						<a href="mailto:rialto@rialtogroup.by">rialto@rialtogroup.by</a>
+					</div>
+				</div>
+				<a href="#" class="btn">Обратный звонок</a>
+			</div>
+		</div>
+	</div>
+	<!-- END nav -->
+
 	<!-- BEGIN full page -->
 	<div class="js-fullpage">
-	    <div class="section js-section" style="">
-	    </div>
-	    <div class="section js-section"  style="background-image: url(img/1.jpg)">Some section</div>
-	    <div class="section js-section"  style="background-image: url(img/1.jpg)">Some section</div>
-	    <div class="section js-section"  style="background-image: url(img/1.jpg)">Some section</div>
+		<div class="section js-section">
+			<div class="section__bg" style="background-image: url(img/1.jpg)"></div>
+	    	<div class="l-center">
+	    		<div class="section__in">		
+		    		<div class="section__info">Шоурум в центре Минска</div>
+		    		<div class="section__name">
+		    			<span>Салон итальянской плитки</span>
+		    			<img src="img/fig1.png" alt="img">
+		    		</div>
+		    		<a class="section__link" href="#">Перейти в каталог плитки</a>
+		    	</div>
+	    	</div>
+		</div>
+		<div class="section js-section">
+			<div class="section__bg" style="background-image: url(img/2.jpg)"></div>
+			<div class="l-center">
+	    		<div class="section__in">		
+		    		<div class="section__info">Шоурум в центре Минска</div>
+		    		<div class="section__name">
+		    			<span>Салон итальянской плитки</span>
+		    			<img src="img/fig2.png" alt="img">
+		    		</div>
+		    		<a class="section__link" href="#">Перейти в каталог плитки</a>
+		    	</div>
+	    	</div>
+		</div>
+		<div class="section js-section">
+			<div class="section__bg" style="background-image: url(img/3.jpg)"></div>
+			<div class="l-center">
+	    		<div class="section__in">		
+		    		<div class="section__info">Шоурум в центре Минска</div>
+		    		<div class="section__name">
+		    			<span>Салон итальянской плитки</span>
+		    			<img src="img/fig3.png" alt="img">
+		    		</div>
+		    		<a class="section__link" href="#">Перейти в каталог плитки</a>
+		    	</div>
+	    	</div>
+		</div>
+		<div class="section js-section">
+			<div class="section__bg" style="background-image: url(img/1.jpg)"></div>
+	    	<div class="l-center">
+	    		<div class="section__in">		
+		    		<div class="section__info">Шоурум в центре Минска</div>
+		    		<div class="section__name">
+		    			<span>Салон итальянской плитки</span>
+		    			<img src="img/fig4.png" alt="img">
+		    		</div>
+		    		<a class="section__link" href="#">Перейти в каталог плитки</a>
+		    	</div>
+	    	</div>
+		</div>
+		<div class="section js-section">
+			<div class="section__bg" style="background-image: url(img/2.jpg)"></div>
+			<div class="l-center">
+	    		<div class="section__in">		
+		    		<div class="section__info">Шоурум в центре Минска</div>
+		    		<div class="section__name">
+		    			<span>Салон итальянской плитки</span>
+		    			<img src="img/fig5.png" alt="img">
+		    		</div>
+		    		<a class="section__link" href="#">Перейти в каталог плитки</a>
+		    	</div>
+	    	</div>
+		</div>
+		<div class="section js-section">
+			<div class="section__bg" style="background-image: url(img/3.jpg)"></div>
+			<div class="l-center">
+	    		<div class="section__in">		
+		    		<div class="section__info">Шоурум в центре Минска</div>
+		    		<div class="section__name">
+		    			<span>Салон итальянской плитки</span>
+		    			<img src="img/fig6.png" alt="img">
+		    		</div>
+		    		<a class="section__link" href="#">Перейти в каталог плитки</a>
+		    	</div>
+	    	</div>
+		</div>
 	</div>
 	<!-- END full page -->
-
+	<div class="nav">
+		<button type="button" class="nav__prev js-nav-prev is-inactive"></button>
+		<div class="nav__counter">
+			<div>
+				<span class="js-nav-curent">1</span>
+				<span class="js-nav-all">6</span>
+			</div>
+		</div>
+		<button type="button" class="nav__next js-nav-next"></button>
+	</div>
 	<!-- BEGIN footer -->
 	<div class="footer js-hover">
 		<div class="footer__lang">
@@ -110,9 +189,7 @@
 	<i class="line-bg line-bg_left js-hover"></i>
 	<i class="line-bg line-bg_right js-hover"></i>
 
-</div>
-<!-- END out-->
-<!-- load scripts -->
-<script src="js/lib/head.js"/>
+
+	<script src="js/lib/head.js"></script>
 </body>
 </html>
