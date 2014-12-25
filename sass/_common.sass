@@ -82,6 +82,19 @@ body
 	color: #fff 
 	color: rgba(#fff,.5) 
 	background: #423b38 
+	+scrollbar
+		width: 6px
+		height: 6px
+		+border-radius(4px)
+		background: none
+	+scrollbar-thumb
+		background: rgba(#fff, .5)
+		+border-radius(4px)
+	+scrollbar-track-piece     
+		width: 6px 
+		+border-radius(4px) 
+	+selection
+		background: rgba(0,0,0,.1) 
 .index-page
 	margin: 0
 	padding: 0
@@ -109,7 +122,7 @@ a
 // 	left: 0
 // 	overflow: hidden
 .line-bg
-	position: absolute
+	position: fixed
 	top: 0
 	bottom: 0
 	z-index: 2
@@ -204,7 +217,7 @@ a
 .address__title
 	color: $gray
 .header
-	position: absolute
+	position: fixed
 	top: 0
 	right: 20px
 	left: 20px
@@ -346,7 +359,7 @@ a
 		background: $brown 
 		+tr(top .3s)
 .footer
-	position: absolute
+	position: fixed
 	right: 20px
 	bottom: 0
 	left: 20px

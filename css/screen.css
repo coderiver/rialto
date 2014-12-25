@@ -34,6 +34,11 @@ html { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: 
 .has-open-nav .line-bg, .has-open-nav .header__top, .has-open-nav .footer { background: #1f1a17 !important; }
 
 body { font-family: "helveticaneuecyr-roman", Arial, sans-serif; font-size: 12px; line-height: 1.8; letter-spacing: 2px; color: white; color: rgba(255, 255, 255, 0.5); background: #423b38; }
+body::-webkit-scrollbar { width: 6px; height: 6px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; background: none; }
+body::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.5); -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+body::-webkit-scrollbar-track-piece { width: 6px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px; }
+body ::selection { background: rgba(0, 0, 0, 0.1); }
+body ::-moz-selection { background: rgba(0, 0, 0, 0.1); }
 
 .index-page { margin: 0; padding: 0; overflow: hidden; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
@@ -43,7 +48,7 @@ a { text-decoration: none; }
 .l-center:after { content: " "; display: table; clear: both; }
 @media only screen and (max-width: 1400px) { .l-center { max-width: 1060px; } }
 
-.line-bg { position: absolute; top: 0; bottom: 0; z-index: 2; width: 20px; background: rgba(31, 26, 23, 0.2); -webkit-transition: background 0.3s; -moz-transition: background 0.3s; -o-transition: background 0.3s; transition: background 0.3s; }
+.line-bg { position: fixed; top: 0; bottom: 0; z-index: 2; width: 20px; background: rgba(31, 26, 23, 0.2); -webkit-transition: background 0.3s; -moz-transition: background 0.3s; -o-transition: background 0.3s; transition: background 0.3s; }
 .line-bg.has-hover { background: rgba(31, 26, 23, 0.7); }
 
 .line-bg_left { left: 0; }
@@ -75,7 +80,7 @@ a { text-decoration: none; }
 
 .address__title { color: #625c57; }
 
-.header { position: absolute; top: 0; right: 20px; left: 20px; z-index: 12; }
+.header { position: fixed; top: 0; right: 20px; left: 20px; z-index: 12; }
 @media only screen and (max-width: 1280px) { .header .l-center { max-width: 100%; padding: 0 130px; } }
 .header.has-hover .header__top { background: rgba(31, 26, 23, 0.7); }
 
@@ -111,7 +116,7 @@ a { text-decoration: none; }
 .btn:before { content: ""; position: absolute; left: 5px; right: -2px; bottom: -3px; height: 3px; background: #bc8420; -webkit-transition: left 0.3s; -moz-transition: left 0.3s; -o-transition: left 0.3s; transition: left 0.3s; }
 .btn:after { content: ""; position: absolute; right: -3px; top: 5px; bottom: -3px; width: 3px; background: #bc8420; -webkit-transition: top 0.3s; -moz-transition: top 0.3s; -o-transition: top 0.3s; transition: top 0.3s; }
 
-.footer { position: absolute; right: 20px; bottom: 0; left: 20px; height: 50px; line-height: 50px; background: rgba(31, 26, 23, 0.2); -webkit-transition: background 0.3s; -moz-transition: background 0.3s; -o-transition: background 0.3s; transition: background 0.3s; }
+.footer { position: fixed; right: 20px; bottom: 0; left: 20px; height: 50px; line-height: 50px; background: rgba(31, 26, 23, 0.2); -webkit-transition: background 0.3s; -moz-transition: background 0.3s; -o-transition: background 0.3s; transition: background 0.3s; }
 .footer.has-hover { background: rgba(31, 26, 23, 0.7); }
 .footer a { display: inline-block; color: white; font-size: 11px; text-transform: uppercase; opacity: 0.5; -webkit-transition: opacity 0.3s; -moz-transition: opacity 0.3s; -o-transition: opacity 0.3s; transition: opacity 0.3s; will-change: opacity; }
 .footer a:hover { opacity: 1; }
@@ -129,14 +134,13 @@ a { text-decoration: none; }
 .link-address { position: relative; }
 .link-address:before { content: ""; display: inline-block; vertical-align: middle; margin-right: 13px; background: url('../img/icons-sf74c612356.png') 0 -51px no-repeat; width: 12px; height: 19px; }
 
-.section { background-repeat: no-repeat; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; }
 .section.active .section__bg { -ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); }
 .section.active .section__in { opacity: 1; }
 .section.active .section__name img { -ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); -webkit-transform: translateX(0); -moz-transform: translateX(0); -ms-transform: translateX(0); -o-transform: translateX(0); transform: translateX(0); }
 .section.active .section__name span { -webkit-transform: translate(0); -moz-transform: translate(0); -ms-transform: translate(0); -o-transform: translate(0); transform: translate(0); }
 .section.active .section__info, .section.active .section__link { -webkit-transform: translateY(0); -moz-transform: translateY(0); -ms-transform: translateY(0); -o-transform: translateY(0); transform: translateY(0); }
 
-.section__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; -ms-transform: scale(0.8); -webkit-transform: scale(0.8); transform: scale(0.8); -webkit-transition: -webkit-transform 0.7s ease-in-out; -moz-transition: -moz-transform 0.7s ease-in-out; -o-transition: -o-transform 0.7s ease-in-out; transition: transform 0.7s ease-in-out; will-change: transform; }
+.section__bg { position: absolute; top: 0; right: 0; bottom: 0; left: 0; -ms-transform: scale(0.8); -webkit-transform: scale(0.8); transform: scale(0.8); -webkit-transition: -webkit-transform 0.7s ease-in-out; -moz-transition: -moz-transform 0.7s ease-in-out; -o-transition: -o-transform 0.7s ease-in-out; transition: transform 0.7s ease-in-out; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat; will-change: transform; }
 
 .section__in { position: relative; display: inline-block; will-change: opacity; opacity: 0; -webkit-transition: opacity 0.7s linear; -webkit-transition-delay: 0.4s; -moz-transition: opacity 0.7s linear 0.4s; -o-transition: opacity 0.7s linear 0.4s; transition: opacity 0.7s linear 0.4s; }
 

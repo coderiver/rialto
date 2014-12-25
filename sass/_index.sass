@@ -4,8 +4,6 @@ $delay: .7s
 $type: ease-in-out
 
 .section
-	background-repeat: no-repeat
-	+cover
 	&.active
 		.section__bg
 			+scale(1)
@@ -28,6 +26,8 @@ $type: ease-in-out
 	left: 0
 	+scale(.8)
 	+tr(transform $time $type)
+	+cover
+	background-repeat: no-repeat
 	will-change: transform
 .section__in
 	position: relative
