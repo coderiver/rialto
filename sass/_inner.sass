@@ -1,216 +1,123 @@
-// Normally mainpage styles
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.out
+	position: relative
+	
+
+.item
+	position: relative
+	width: 50%
+	background: #f00 
+	&:hover
+		.item__more
+			opacity: 1
+		.item__info
+			color: #fff 
+.item_info
+	padding: 150px 0 40px 220px
+	height: 545px
+	background: #231e1b
+	+clr
+	+r(1400)
+		padding-left: 180px
+.item__in
+	display: block
+	overflow: hidden
+	position: relative
+	z-index: 2
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 0
+		right: 0
+		bottom: 0
+		background: rgba(#0c0a09, .2) 
+.item__img
+	img
+		display: block
+		width: 100%
+		height: auto
+.item__info
+	position: absolute
+	bottom: 45px
+	left: 40px
+	z-index: 2
+	+hel
+	font-size: 12px
+	color: #fff 
+	color: rgba(#fff,.5) 
+	+tr_c
+.item__more
+	position: absolute
+	bottom: 150px
+	right: -40px
+	z-index: 2
+	border-bottom: 1px solid 
+	color: #fff
+	font-size: 12px 
+	+rotate(-90)
+	opacity: 0
+	font-family: Arial,sans-serif 
+	+font-smoothing
+	+transform-origin(50% 50%)
+	will-change: opacity
+	+transition(border .3s, opacity .3s)
+	&:hover
+		border-color: transparent 
+
+.page-info
+	overflow-y: auto
+	margin-right: 3px
+	height: 100%
+	padding-right: 80px
+	+scrollbar
+		width: 3px
+		height: 3px
+		background: none
+	+scrollbar-thumb
+		background: rgba(#fff, 0)
+		+tr_bg
+	+scrollbar-track-piece     
+		width: 3px 
+	&:hover
+		+scrollbar-thumb
+			background: rgba(#fff, .5)
+.page-info__title
+	position: relative
+	margin-bottom: 55px
+	font-size: 50px
+	+light
+	color: #fff 
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		bottom: -20px 
+		width: 80px
+		height: 1px
+		background: rgba(#fff,.3) 
+.breadcrumbs
+	position: absolute
+	left: 220px
+	top: 105px
+	+r(1400)
+		left: 180px
+	a
+		display: inline-block
+		position: relative
+		margin-right: 40px
+		color: #fff  
+		opacity: .1
+		+tr_o
+		font-size: 10px
+		text-transform: uppercase
+		&:before
+			content: "—" 
+			position: absolute
+			left: -30px
+			top: 0
+		&:first-child	
+			&:before
+				display: none
+		&:hover
+			opacity: 1
+			

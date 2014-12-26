@@ -15,7 +15,15 @@ $(document).ready(function() {
 	//     scrollFixedElements()
 	// });
 
-// hover
+	function itemInfoHeight() {
+		var height = $(".item_info").outerWidth()/1.47;
+		$(".item_info").css({
+			height: height
+		});
+	}
+	itemInfoHeight();
+
+// hover on border
 	$(".js-hover").hover(
 	  function() {
 	    $(".js-hover").addClass("has-hover");
@@ -24,6 +32,7 @@ $(document).ready(function() {
 	  }
 	);
 
+// fullpage.js plugin
 	var lengthSections = $(".js-section").length;
 	$(".js-nav-all").text(lengthSections);
 
@@ -84,11 +93,120 @@ $(document).ready(function() {
 		fpage.fullpage.moveSectionDown();
 		return false;
 	});
-	
+
+// show/hide menu
 	$(".js-menu-toggle").on("click", function(){
 		$(this).toggleClass("is-active");
 		$(".js-menu").toggleClass("is-active");
 		$("html").toggleClass("has-open-nav");
 		return false;
 	});
+
+// masonry init
+	var $container = $('.js-masonry');
+	// initialize
+	$container.masonry({
+	  itemSelector: '.js-masonry-item',
+	  columnWidth: ".js-masonry-item",
+	  gutter: 0
+	});
+
+
+	// new AnimOnScroll( document.getElementById( 'js-masonry-animated' ), {
+	// 	minDuration : 0.4,
+	// 	maxDuration : 0.7,
+	// 	viewportFactor : 0.1
+	// } );
+
+
+// popups
+	$(".js-popup-link").on("click", function(){
+		var popup = $(this).attr("href");
+		$(".js-popup").fadeOut(300)
+		$('[data-popup="'+popup+'"]').fadeIn(300);
+		//$('html').addClass("has-open-popup");
+		//$("textarea").val($(".item__info").text());
+		return false; 
+	});
+
+	$(".js-popup-close").on("click", function(){
+		$(this).parents(".js-popup").fadeOut(300);
+		//$('html').removeClass("has-open-popup");
+		return false;
+	});
+	$(".js-popup .popup__in").on("click", function(event){
+		event.stopPropagation();
+	});
+
+// validation form
+	function validate() {
+		$('.js-validate').each(function(){
+			if ($(this).length > 0) {
+				$(this).validate({
+					errorClass: 'has-error',
+					rules: {
+						username: {
+							minlength: 2
+						},
+						any: {
+							minlength: 2
+						},
+						password: {
+							minlength: 5
+						},
+						confirm_password: {
+							minlength: 5,
+							equalTo: '#password'
+						},
+						email: {
+							email: true
+						},
+						tel: {
+							minlength: 2,
+						},
+						address: {
+							minlength: 2
+						},
+						message: {
+							minlength: 4
+						},
+						field: {
+							required: true
+						},
+						// fruit: {
+						//   required: true
+						// }
+					},
+					messages: {
+						firstname: 'Вас так зовут?',
+						lastname: 'У вас такая фамилия?',
+						fathername: 'У вас такое отчество?',
+						password: {
+							required: 'Введите пароль',
+							minlength: 'Минимум 5 символов'
+						},
+						confirm_password: {
+							 required: 'Пароли не совпадают',
+							 minlength: 'Минимум 5 символов',
+							 equalTo: 'Пароли не совпадают'
+						},
+						email: 'Неверный формат',
+						address: 'Это Ваш адрес?',
+						any: 'Заполните поле',
+						company: 'Заполните поле',
+						tel: {
+							required: 'Заполните поле',
+						},
+						message: {
+							required: 'Заполните поле',
+							minlength: 'Заполните поле'
+						}
+					}
+				});
+			}
+		});
+	}
+		
+	validate();
+
 });
