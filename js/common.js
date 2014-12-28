@@ -15,14 +15,18 @@ $(document).ready(function() {
 	//     scrollFixedElements()
 	// });
 
-	function itemInfoHeight() {
-		var height = $(".item_info").outerWidth()/1.47;
-		$(".item_info").css({
+	function itemCustomHeight() {
+		var item = $(".js-masonry-custom-height"),
+			OriginHeight = item.attr("data-height"),
+			OriginWidth = item.attr("data-width"),
+			currentWidth = item.outerWidth(),
+			k = OriginWidth/OriginHeight,
+			height = currentWidth/k;
+		item.css({
 			height: height
 		});
 	}
-	itemInfoHeight();
-
+	itemCustomHeight();
 // hover on border
 	$(".js-hover").hover(
 	  function() {
