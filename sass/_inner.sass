@@ -11,6 +11,12 @@
 			opacity: 1
 		.item__info
 			color: #fff 
+	.breadcrumbs
+		position: absolute
+		left: 220px
+		top: 105px
+		+r(1400)
+			left: 180px
 .item_info
 	padding: 150px 0 40px 220px
 	height: 545px
@@ -99,6 +105,7 @@
 	font-size: 50px
 	+light
 	color: #fff 
+	font-weight: normal
 	&:after
 		content: ""
 		position: absolute
@@ -110,6 +117,7 @@
 .page-info__sub
 	margin-bottom: 20px
 	font-size: 30px
+	font-weight: normal
 	+light
 	color: rgba(#fff,.7) 
 .quote
@@ -120,11 +128,6 @@
 	+light_it
 	line-height: 1.36
 .breadcrumbs
-	position: absolute
-	left: 220px
-	top: 105px
-	+r(1400)
-		left: 180px
 	a
 		display: inline-block
 		position: relative
@@ -157,3 +160,79 @@
 		&:hover
 			opacity: 1
 		
+
+.main
+	margin: 0 auto 
+	padding: 100px 220px 
+	max-width: 1400px
+	+r(1400)
+		padding: 100px 180px 
+		max-width: 100%
+.article
+	position: relative
+	padding: 30px 0 
+	letter-spacing: 1px 
+	font-size: 12px
+	+hel
+	color: #fff 
+	h1
+		margin-bottom: 60px
+		position: relative
+		line-height: 1.6
+		+light
+		font-size: 50px
+		text-transform: uppercase
+		font-weight: normal
+		color: #fff 
+		&:after
+			content: ""
+			position: absolute
+			left: 0
+			bottom: -25px
+			width: 80px
+			height: 1px
+			background: #fff
+			opacity: 0.3  
+	img
+		display: block
+		margin: 50px auto 30px
+		max-width: 100%
+		height: auto
+	blockquote
+		margin: 32px 0 
+		color: $brown
+		font-size: 22px
+		line-height: 1.36
+		+light_it 
+	p
+		margin-bottom: 22px
+.article__close
+	position: absolute
+	right: -100px
+	top: -30px
+	+s(close-big)
+	opacity: 0.5
+	+tr_o
+	&:hover
+		opacity: 1
+.date
+	margin: 60px 0 
+	color: #fff
+	opacity: 0.5 
+.link-back
+	display: inline-block
+	position: relative
+	padding-left: 20px
+	color: #fff
+	opacity: 0.2
+	+tr_o
+	font-size: 10px
+	text-transform: uppercase
+	&:hover
+		opacity: 1
+	&:before
+		content: ""
+		position: absolute
+		left: 0
+		top: 1px
+		+s(arr-l) 
