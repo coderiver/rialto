@@ -269,3 +269,90 @@
 	right: 0
 	bottom: 0
 	left: 0
+
+.page
+	position: relative
+	z-index: 23
+	padding: 160px 40px 
+.page__title
+	margin-bottom: 60px
+	margin-left: 180px
+	+r(1400)
+		margin-left: 140px
+	position: relative
+	line-height: 1.6
+	+light
+	font-size: 50px
+	text-transform: uppercase
+	font-weight: normal
+	color: #fff 
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		bottom: -25px
+		width: 80px
+		height: 1px
+		background: #fff
+		opacity: 0.3  
+.page-bg
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 0
+	+cover
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: #000
+		opacity: 0.7  
+		
+.panel
+	position: relative
+	margin-bottom: -1px
+	font-size: 12px
+	+hel
+	&.is-active
+		.panel__title
+			background: rgba(#fff,.1) 
+.panel__title	
+	position: relative
+	border-top: 1px solid rgba(#fff,.2) 
+	border-bottom: 1px solid rgba(#fff,.2)
+	padding: 16px 140px
+	+r(1400)
+		padding: 16px 100px
+	font-size: 30px
+	color: #fff
+	+light
+	cursor: pointer
+	+unselectable
+	letter-spacing: 0
+	+tr_bg
+	&:hover
+		background: rgba(#fff,.05) 
+	&:after
+		content: ""
+		position: absolute
+		right: 30px
+		top: 50%
+		margin-top: -3px
+		+s(arr-b-small)
+.panel__body
+	display: none
+	border-bottom: 1px solid rgba(#fff,.2)
+	padding: 20px 140px 65px
+	+r(1400)
+		padding: 20px 100px 35px
+	letter-spacing: 1px
+	background: rgba(#fff,.05) 
+	+column-count(2)
+	+column-gap(100px)
+	p
+		display: inline-block
