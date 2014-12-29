@@ -27,6 +27,9 @@ $(document).ready(function() {
 		});
 	}
 	itemCustomHeight();
+	$(window).resize(function(){
+		itemCustomHeight();
+	});
 // hover on border
 	$(".js-hover").hover(
 	  function() {
@@ -107,13 +110,16 @@ $(document).ready(function() {
 	});
 
 // masonry init
-	var $container = $('.js-masonry');
-	// initialize
-	$container.masonry({
-	  itemSelector: '.js-masonry-item',
-	  columnWidth: ".js-masonry-item",
-	  gutter: 0
+ 	var $container = $('.js-masonry');
+	$(".js-masonry").imagesLoaded( function() {
+		// initialize
+		$container.masonry({
+			itemSelector: '.js-masonry-item',
+			columnWidth: ".js-masonry-item",
+			gutter: 0
+		});
 	});
+	
 
 
 	// new AnimOnScroll( document.getElementById( 'js-masonry-animated' ), {
