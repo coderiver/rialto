@@ -272,8 +272,20 @@
 
 .page
 	position: relative
-	z-index: 23
+	z-index: 2
 	padding: 160px 40px 
+	letter-spacing: 1px 
+	color: #fff 
+.page__in
+	padding: 0 180px 70px
+	+r(1400)
+		padding: 0 140px 70px
+	a
+		&[href^="mailto:"]
+			font-size: 18px
+			color: #fff
+			+light_it
+			letter-spacing: 1px  
 .page__title
 	margin-bottom: 60px
 	margin-left: 180px
@@ -285,7 +297,6 @@
 	font-size: 50px
 	text-transform: uppercase
 	font-weight: normal
-	color: #fff 
 	&:after
 		content: ""
 		position: absolute
@@ -295,6 +306,12 @@
 		height: 1px
 		background: #fff
 		opacity: 0.3  
+.page__sub
+	margin-bottom: 30px
+	font-size: 30px
+	line-height: 0.9
+	letter-spacing: 0 
+	+light
 .page-bg
 	position: fixed
 	top: 0
@@ -325,9 +342,9 @@
 	position: relative
 	border-top: 1px solid rgba(#fff,.2) 
 	border-bottom: 1px solid rgba(#fff,.2)
-	padding: 16px 140px
+	padding: 16px 180px
 	+r(1400)
-		padding: 16px 100px
+		padding: 16px 140px
 	font-size: 30px
 	color: #fff
 	+light
