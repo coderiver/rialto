@@ -249,4 +249,54 @@ $(document).ready(function() {
 		// }
   //   );
 
+	$(".js-brand").on("click", function(){
+		var top = $(this).offset().top,
+			left = $(this).offset().left,
+			win = $(this).attr("data-brand");
+		$(".js-window").hide();
+		if ($(window).width()-left < $("."+win).width()) {
+			$("."+win).css({
+				right: 0,
+				left: 'auto',
+				top: top
+			}).fadeIn(500);
+		}
+		else if ($(".out").height()-top < $("."+win).height()) {
+			$("."+win).css({
+				bottom: 0,
+				left: left,
+				top: 'auto'
+			}).fadeIn(500);
+		}
+		else {
+			$("."+win).css({
+				left: left,
+				top: top
+			}).fadeIn(500);
+		}
+		
+		return false;
+	});
+	$(".js-window-close").on("click", function(){
+		$(".js-window").hide();
+		return false;
+	});
+
+	$(window).scroll(function(){
+		var scroll = $(document).scrollTop(),
+			k1 = scroll/10,
+			k2 = scroll/4,
+			k3 = scroll/6;
+		$(".js-col1").css({
+			top: -k1,
+		});
+		$(".js-col2").css({
+			top: -k2,
+		});
+		$(".js-col3").css({
+			top: -k3,
+		});
+		console.log(scroll);
+	});
+
 });

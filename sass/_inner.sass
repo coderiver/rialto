@@ -1,7 +1,8 @@
 .out
 	position: relative
 	
-
+.item-wrap
+	+clr
 .item
 	position: relative
 	width: 50%
@@ -540,8 +541,12 @@
 		+tr_o
 
 .catalog-col
+	position: relative
 	float: left
 	width: 33.3%
+	//+tr(top .3s)
+	&:nth-child(2)
+		padding-top: 50px
 .catalog
 	position: relative
 	margin-bottom: 160px
@@ -584,6 +589,7 @@
 	font-size: 50px
 	+light
 	color: #fff 
+	text-transform: uppercase
 	font-weight: normal
 	&:after
 		content: ""
@@ -593,3 +599,41 @@
 		width: 80px
 		height: 1px
 		background: rgba(#fff,.3) 
+		
+.window
+	display: none
+	position: absolute
+	right: 0
+	top: 0
+	z-index: 13
+	width: 33.3%
+	height: 545px
+	background: #423b38 
+	letter-spacing: 1px 
+.window__in
+	padding: 130px 3px 40px 90px
+	img
+		margin-bottom: 40px
+.window__scroll 
+	height: 100%
+	padding-right: 87px
+	overflow-y: auto
+.window__img
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	+cover
+	opacity: 0.1
+.window__close
+	position: absolute
+	right: 25px
+	top: 25px
+	+s(close)
+	z-index: 2
+	+tr(transform .3s)
+	will-change: transform
+	&:hover
+		+rotate(90)
+	
