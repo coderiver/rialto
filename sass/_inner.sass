@@ -231,7 +231,7 @@
 .main
 	margin: 0 auto 
 	padding: 100px 220px 
-	max-width: 1400px
+	+clr
 	+r(1400)
 		padding: 100px 180px 
 		max-width: 100%
@@ -474,6 +474,7 @@
 	bottom: 0
 	left: 0
 	+vertical
+	opacity: 0.5
 	img
 		vertical-align: middle
 		+tr(filter .5s)
@@ -496,3 +497,99 @@
 		vertical-align: middle
 		text-align: left
 		font-size: 12px
+		
+.meta-nav
+	font-size: 22px
+	+light
+	a
+		display: inline-block
+		margin-right: 30px
+		color: #fff
+		opacity: 0.5
+		+tr_o
+		&:first-child
+			color: $brown
+		&:hover
+			opacity: 1
+			
+.brand
+	position: relative
+	float: left
+	border-left: 1px solid #2a2522 
+	border-bottom: 1px solid #2a2522 
+	width: 16.66%
+	height: 272px
+	background: #423b38 
+	&:nth-child(2),
+	&:nth-child(3),
+	&:nth-child(4)
+		height: 273px
+	&:hover
+		img
+			opacity: 1
+.brand__in
+	position: absolute
+	top: 0
+	right: 0
+	left: 0
+	bottom: 0
+	+vertical
+	img
+		vertical-align: middle
+		opacity: 0.7
+		+tr_o
+
+.catalog-col
+	float: left
+	width: 33.3%
+.catalog
+	position: relative
+	margin-bottom: 160px
+	width: 300px
+	height: 300px
+	+r(1550)
+		width: 200px
+		height: 200px
+.catalog__media
+	img
+		display: block
+		width: 100%
+		height: auto
+.catalog__fig
+	position: absolute
+	bottom: -30px
+	right: -30px
+	img
+		display: block
+		max-width: 200px
+		+r(1550)
+			max-width: 200px
+.catalog__name	
+	position: absolute
+	z-index: 2
+	bottom: 24px
+	right: -62px
+	border-bottom: 1px solid 
+	color: #fff
+	line-height: 1
+	font-size: 40px
+	+light 
+	+tr(border .3s)
+	&:hover
+		border-color: transparent 
+		
+.title
+	position: relative
+	margin-bottom: 55px
+	font-size: 50px
+	+light
+	color: #fff 
+	font-weight: normal
+	&:after
+		content: ""
+		position: absolute
+		left: 0
+		bottom: -20px 
+		width: 80px
+		height: 1px
+		background: rgba(#fff,.3) 

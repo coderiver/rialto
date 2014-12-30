@@ -16,15 +16,19 @@ $(document).ready(function() {
 	// });
 
 	function itemCustomHeight() {
-		var item = $(".js-masonry-custom-height"),
-			OriginHeight = item.attr("data-height"),
-			OriginWidth = item.attr("data-width"),
-			currentWidth = item.outerWidth(),
+		var item = $(".js-masonry-custom-height");
+		item.each(function(){
+			OriginHeight = $(this).attr("data-height"),
+			OriginWidth = $(this).attr("data-width"),
+			currentWidth = $(this).outerWidth(),
 			k = OriginWidth/OriginHeight,
 			height = currentWidth/k;
-		item.css({
-			height: height
+			$(this).css({
+				height: height
+			});
 		});
+			
+		
 	}
 	itemCustomHeight();
 	$(window).resize(function(){
