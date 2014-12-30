@@ -89,10 +89,10 @@ $(document).ready(function() {
 
 	}
 
-	function navBtn() {
-		var index = $(".js-section.active").index();
-		alert(index);
-	}
+	// function navBtn() {
+	// 	var index = $(".js-section.active").index();
+	// 	alert(index);
+	// }
 	//navBtn();
 
 	$(".js-nav-prev").on("click", function(){
@@ -114,26 +114,28 @@ $(document).ready(function() {
 	});
 
 // masonry init
- 	var $container = $('.js-masonry');
- 	if ($container.length) {
- 		$container.imagesLoaded( function() {
- 			// initialize
- 			$container.masonry({
- 				itemSelector: '.js-masonry-item',
- 				columnWidth: ".js-masonry-item",
- 				gutter: 0
- 			});
- 		});
- 	}
+ 	// var $container = $('.js-masonry');
+ 	// if ($container.length) {
+ 	// 	$container.imagesLoaded( function() {
+ 	// 		// initialize
+ 	// 		$container.masonry({
+ 	// 			itemSelector: '.js-masonry-item',
+ 	// 			columnWidth: ".js-masonry-item",
+ 	// 			gutter: 0
+ 	// 		});
+ 	// 	});
+ 	// }
 		
 	
 
-
-	// new AnimOnScroll( document.getElementById( 'js-masonry-animated' ), {
-	// 	minDuration : 0.4,
-	// 	maxDuration : 0.7,
-	// 	viewportFactor : 0.1
-	// } );
+ 	if ($("#js-masonry-animate").length) {
+ 		new AnimOnScroll( document.getElementById( 'js-masonry-animate' ), {
+ 			minDuration : 0.4,
+ 			maxDuration : 0.7,
+ 			viewportFactor : 0.2
+ 		} );
+ 	}
+	
 
 
 // popups
@@ -284,9 +286,9 @@ $(document).ready(function() {
 
 	$(window).scroll(function(){
 		var scroll = $(document).scrollTop(),
-			k1 = scroll/10,
-			k2 = scroll/4,
-			k3 = scroll/6;
+			k1 = scroll/8,
+			k2 = scroll/2,
+			k3 = scroll/5;
 		$(".js-col1").css({
 			top: -k1,
 		});
@@ -296,7 +298,6 @@ $(document).ready(function() {
 		$(".js-col3").css({
 			top: -k3,
 		});
-		console.log(scroll);
 	});
 
 });

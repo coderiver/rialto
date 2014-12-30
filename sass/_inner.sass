@@ -1,10 +1,29 @@
 .out
 	position: relative
-	
+	overflow: hidden
 .item-wrap
 	+clr
+.item-wrap .item.shown,
+.no-js .item-wrap .item,
+.no-cssanimations .item-wrap .item
+	opacity: 1
+	
+.has-animation
+	.item
+		opacity: 0
+		will-change: transform
+		&.animate
+			+transform(translateY(200px))
+			+animation(moveUp 0.65s ease forwards)
+
+
++keyframes(moveUp)
+	100%
+		+transform(translateY(0))
+		opacity: 1
 .item
 	position: relative
+	float: left
 	width: 50%
 	background: #231e1b
 	&:hover
@@ -74,11 +93,11 @@
 	top: 0
 	z-index: 2
 	color: #fff 
-	padding: 125px 3px 40px 40px
+	padding: 125px 3px 40px 120px
 	letter-spacing: 1px 
 	font-size: 12px
-	// +r(1400)
-	// 	padding: 80px 40px 
+	+r(1400)
+		padding: 100px 3px 40px 120px
 .item__scroll	
 	overflow-y: auto
 	padding-right: 90px
