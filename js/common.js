@@ -254,26 +254,39 @@ $(document).ready(function() {
 	$(".js-brand").on("click", function(){
 		var top = $(this).offset().top,
 			left = $(this).offset().left,
-			win = $(this).attr("data-brand");
+			win = $(this).attr("data-brand"),
+			width = $("."+win).outerWidth(),
+			height = $("."+win).outerHeight(),
+			parent = $(".out");
 		$(".js-window").hide();
-		if ($(window).width()-left < $("."+win).width()) {
+
+		if (parent.width()-left < width) {
 			$("."+win).css({
-				right: 0,
+				top: top,
 				left: 'auto',
-				top: top
+				right: 0
 			}).fadeIn(500);
 		}
-		else if ($(".out").height()-top < $("."+win).height()) {
+		else if (parent.height()-top < height) {
 			$("."+win).css({
-				bottom: 0,
+				top: 'auto',
 				left: left,
-				top: 'auto'
+				right: 'auto',
+				bottom: 0
+			}).fadeIn(500);
+		}
+		else if (parent.width()-left < width && parent.height()-top < height) {
+			$("."+win).css({
+				top: 'auto',
+				left: 'auto',
+				right: 0,
+				bottom: 0
 			}).fadeIn(500);
 		}
 		else {
 			$("."+win).css({
-				left: left,
-				top: top
+				top: top,
+				left: left
 			}).fadeIn(500);
 		}
 		
