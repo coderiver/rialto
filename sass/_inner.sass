@@ -28,6 +28,18 @@
 	+clr
 	+r(1400)
 		padding-left: 180px
+.item_box
+	height: 545px
+	background: #2d2724
+	+clr
+	.item__img
+		opacity: 0.2
+	.item__in
+		height: 100%
+		&:before
+			display: none
+	.date
+		margin: 0
 .item_feedback
 	padding-top: 75px
 	background: #d1972f 
@@ -53,6 +65,51 @@
 		right: 0
 		bottom: 0
 		background: rgba(#0c0a09, .2) 
+.item__box
+	position: absolute
+	left: 0
+	right: 0
+	bottom: 0
+	top: 0
+	z-index: 2
+	color: #fff 
+	padding: 125px 3px 40px 40px
+	letter-spacing: 1px 
+	font-size: 12px
+	// +r(1400)
+	// 	padding: 80px 40px 
+.item__scroll	
+	overflow-y: auto
+	padding-right: 90px
+	height: 100%
+	+scrollbar
+		width: 3px
+		height: 3px
+		background: none
+	+scrollbar-thumb
+		background: rgba(#fff, 0)
+	+scrollbar-track-piece     
+		width: 3px 
+	&:hover
+		+scrollbar-thumb
+			background: rgba(#fff, .5)
+.item__title
+	margin-bottom: 25px
+	font-size: 30px
+	+light
+.item__descr
+	margin-bottom: 40px
+	+r(1400)
+		margin-bottom: 20px
+.item__link
+	border-bottom: 1px solid
+	padding-bottom: 8px
+	font-size: 10px
+	text-transform: uppercase 
+	color: $brown
+	+tr(border .3s)
+	&:hover
+		border-color: transparent
 .item__img
 	img
 		display: block
@@ -85,7 +142,6 @@
 	+transition(border .3s, opacity .3s)
 	&:hover
 		border-color: transparent 
-
 .page-info
 	overflow-y: auto
 	margin-right: 3px
@@ -126,9 +182,11 @@
 .page-info__sub
 	margin-bottom: 20px
 	font-size: 30px
+	line-height: 1.2
+	letter-spacing: 0 
 	font-weight: normal
 	+light
-	color: rgba(#fff,.7) 
+	color: #fff
 .quote
 	margin: 24px 0 
 	padding-left: 30px
@@ -364,12 +422,77 @@
 .panel__body
 	display: none
 	border-bottom: 1px solid rgba(#fff,.2)
-	padding: 20px 140px 65px
+	padding: 20px 180px 65px
 	+r(1400)
-		padding: 20px 100px 35px
+		padding: 20px 140px 35px
 	letter-spacing: 1px
 	background: rgba(#fff,.05) 
 	+column-count(2)
 	+column-gap(100px)
+	will-change: height
 	p
 		display: inline-block
+		
+.box
+	float: left
+	position: relative 
+	width: 50%
+	height: 50%
+	color: #fff 
+	background: #2d2724
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		right: 0
+		bottom: 0
+		left: 0
+		background: inherit
+		z-index: 2  
+		opacity: 0
+		//visibility: hidden
+		+tr(opacity .5s)
+	&:nth-child(2)
+		background: #231e1b  
+	&:nth-child(3)
+		background: #2a2421 
+	&:nth-child(4)
+		background: #201b18
+	&:hover
+		.box__text
+			opacity: 1
+			visibility: visible
+		&:before
+			opacity: 0.9
+			visibility: visible
+		img
+			+blur(1px)
+.box__img
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	+vertical
+	img
+		vertical-align: middle
+		+tr(filter .5s)
+		will-change: filter
+.box__text
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 3
+	opacity: 0
+	//visibility: hidden
+	+vertical
+	letter-spacing: 1px 
+	+tr(opacity .5s)
+	span
+		display: inline-block
+		max-width: 290px
+		vertical-align: middle
+		text-align: left
+		font-size: 12px
