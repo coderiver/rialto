@@ -1,8 +1,8 @@
 $(document).ready(function() {
 
-	// $(document).on("click", function(){
-	// 	$(".js-popup").hide();
-	// });
+	$(document).on("click", function(){
+		$(".js-menu").removeClass("is-active");
+	});
 
 	// function scrollFixedElements() {
 	//     var scroll_left = $(this).scrollLeft();
@@ -106,11 +106,15 @@ $(document).ready(function() {
 	});
 
 // show/hide menu
-	$(".js-menu-toggle").on("click", function(){
+	$(".js-menu-toggle").on("click", function(event){
 		$(this).toggleClass("is-active");
 		$(".js-menu").toggleClass("is-active");
 		$("html").toggleClass("has-open-nav");
+		event.stopPropagation();
 		return false;
+	});
+	$(".js-menu").on("click", function(event){
+		event.stopPropagation();
 	});
 
 // masonry init
@@ -231,12 +235,12 @@ $(document).ready(function() {
 // accordion
 	$(".js-accordion-title").on("click", function(){
     	if ($(this).parents(".js-accordion").hasClass("is-active")) {
-    		$(this).parents(".js-accordion").removeClass("is-active").find(".js-accordion-body").slideUp();
+    		$(this).parents(".js-accordion").removeClass("is-active").find(".js-accordion-body").slideUp(200);
     	}
     	else {
     		$(".js-accordion").removeClass("is-active");
-    		$(".js-accordion-body").slideUp();
-    		$(this).parents(".js-accordion").toggleClass("is-active").find(".js-accordion-body").slideToggle();
+    		$(".js-accordion-body").slideUp(200);
+    		$(this).parents(".js-accordion").toggleClass("is-active").find(".js-accordion-body").slideToggle(200);
     	}
     	
     	return false;
