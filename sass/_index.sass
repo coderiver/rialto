@@ -9,12 +9,19 @@ $type: ease-in-out
 			+scale(1)
 		.section__in
 			opacity: 1
+			&:hover
+				.section__img
+					.is-hidden-img
+						+scale(1)
+						opacity: 1
 		.section__name
-			img
-				+scale(1)
-				+transform(translateX(0))
+			+transform(translateX(0))
 			span
 				+transform(translate(0))
+		.section__img
+			+transform(translateX(0))
+			.is-visible-img
+				+scale(1)
 		.section__info,
 		.section__link
 			+transform(translateY(0))
@@ -75,20 +82,38 @@ $type: ease-in-out
 		z-index: 2
 		+transform(translate(-100px, 100px))
 		+transition(transform $time $type $time)
-	img
-		position: absolute
-		left: 100px
-		top: 50%
-		margin-top: -285px
-		+scale(.9)
-		+transform(translateX(200px))
-		+transition(transform $time $type $time)
-		+rh(800)
-			height: 450px
-			width: auto
-			margin-top: -225px
 	+rh(800)
 		margin-bottom: 10%
+.section__img
+	position: absolute
+	width: 570px
+	height: 570px
+	position: absolute
+	left: 100px
+	top: 50%
+	margin-top: -285px
+	+transform(translateX(200px))
+	+transition(transform $time $type $time)
+	+rh(800)
+		height: 450px
+		width: 450px
+		margin-top: -225px
+	img
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: auto
+		&.is-visible-img
+			+scale(.9)
+			will-change: transform
+			+transition(transform $time $type $time)
+		&.is-hidden-img
+			+scale(0)
+			opacity: 0
+			will-change: opacity
+			+transition(transform $time $type, opacity $time $type)
+	
 
 .section__link
 	position: relative

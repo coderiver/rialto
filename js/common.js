@@ -6,16 +6,16 @@ $(document).ready(function() {
 		$(".js-menu-toggle").removeClass("is-active");
 	});
 
-	// function scrollFixedElements() {
-	//     var scroll_left = $(this).scrollLeft();
-	//     $(".fixed-element").css({
-	//         left: -scroll_left
-	//     });
-	// }
-	// scrollFixedElements();
-	// $(window).scroll(function(){
-	//     scrollFixedElements()
-	// });
+	function scrollFixedElements() {
+	    var scroll_left = $(this).scrollLeft();
+	    $(".menu").css({
+	        left: -scroll_left
+	    });
+	}
+	scrollFixedElements();
+	$(window).scroll(function(){
+	    scrollFixedElements()
+	});
 
 	function itemCustomHeight() {
 		var item = $(".js-masonry-custom-height");
@@ -264,7 +264,7 @@ $(document).ready(function() {
 			width = $("."+win).outerWidth(),
 			height = $("."+win).outerHeight(),
 			parent = $(".out");
-		$(".js-window").hide();
+		$(".js-window").hide().removeAttr("style");
 
 		if (parent.width()-left < width) {
 			$("."+win).css({
@@ -299,7 +299,7 @@ $(document).ready(function() {
 		return false;
 	});
 	$(".js-window-close").on("click", function(){
-		$(".js-window").hide();
+		$(".js-window").hide().removeAttr("style");
 		return false;
 	});
 
