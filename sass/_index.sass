@@ -13,7 +13,6 @@ $type: ease-in-out
 				.section__img
 					.is-visible-img
 						opacity: 0
-						+transition(transform .2s linear, opacity .2s linear .05s)
 					.is-hidden-img
 						+scale(1)
 						opacity: 1
@@ -109,12 +108,12 @@ $type: ease-in-out
 		height: auto
 		&.is-visible-img
 			+scale(.9)
-			will-change: transform
+			will-change: transform, opacity
 			+transition(transform .2s linear, opacity .2s linear)
 		&.is-hidden-img
 			+scale(0)
 			opacity: 0
-			will-change: opacity
+			will-change: transform, opacity
 			+transition(transform .2s linear, opacity .2s linear)
 	
 
