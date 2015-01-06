@@ -11,6 +11,9 @@ $type: ease-in-out
 			opacity: 1
 			&:hover
 				.section__img
+					.is-visible-img
+						opacity: 0
+						+transition(transform .2s linear, opacity .2s linear .05s)
 					.is-hidden-img
 						+scale(1)
 						opacity: 1
@@ -107,12 +110,12 @@ $type: ease-in-out
 		&.is-visible-img
 			+scale(.9)
 			will-change: transform
-			+transition(transform $time $type $time)
+			+transition(transform .2s linear, opacity .2s linear)
 		&.is-hidden-img
 			+scale(0)
 			opacity: 0
 			will-change: opacity
-			+transition(transform $time $type, opacity $time $type)
+			+transition(transform .2s linear, opacity .2s linear)
 	
 
 .section__link
