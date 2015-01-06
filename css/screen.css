@@ -185,6 +185,7 @@ a { text-decoration: none; }
 .section.active .section__in { opacity: 1; }
 .section.active .section__in:hover .section__img .is-visible-img { opacity: 0; }
 .section.active .section__in:hover .section__img .is-hidden-img { -ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
+.section.active .section__in:hover .section__link { border-color: transparent; }
 .section.active .section__name { -moz-transform: translateX(0); -ms-transform: translateX(0); -webkit-transform: translateX(0); transform: translateX(0); }
 .section.active .section__name span { -moz-transform: translate(0); -ms-transform: translate(0); -webkit-transform: translate(0); transform: translate(0); }
 .section.active .section__img { -moz-transform: translateX(0); -ms-transform: translateX(0); -webkit-transform: translateX(0); transform: translateX(0); }
