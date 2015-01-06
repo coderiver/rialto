@@ -2,6 +2,8 @@ $(document).ready(function() {
 
 	$(document).on("click", function(){
 		$(".js-menu").removeClass("is-active");
+		$("html").removeClass("has-open-nav");
+		$(".js-menu-toggle").removeClass("is-active");
 	});
 
 	// function scrollFixedElements() {
