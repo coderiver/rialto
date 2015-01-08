@@ -173,6 +173,7 @@
 	&:hover
 		border-color: transparent 
 .page-info
+	position: relative
 	overflow-y: auto
 	margin-right: 3px
 	height: 100%
@@ -214,6 +215,7 @@
 	font-weight: normal
 	+light
 	color: #fff
+
 .quote
 	margin: 24px 0 
 	padding-left: 30px
@@ -335,12 +337,36 @@
 
 .feedback
 	width: 325px
+	position: relative
 .feedback__title
 	margin: 0 0 30px 
 	color: #fff
 	font-size: 30px
 	+light 
-
+.feedback__popup
+	display: none 
+	position: absolute
+	top: -20px
+	left: -20px
+	right: -20px
+	bottom: -20px
+	background: #d1972f 
+	p
+		text-transform: uppercase
+		font-size: 11px
+		+hel
+		line-height: 2.18
+		color: #fff 
+.feedback__reload
+	display: inline-block
+	margin: 40px 0 0 
+	+s(reload)
+	+tr(transform .1s)
+	will-change: transform
+	&:hover
+		+rotate(45)
+	&:active
+		+rotate(135)
 .map
 	width: 100%
 	height: 100%

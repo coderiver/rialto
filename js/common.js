@@ -319,4 +319,9 @@ $(document).ready(function() {
 		});
 	});
 
+	$(".js-hide-message").on("click", function(){
+		$(this).parents(".js-message").fadeOut(300);
+		return false;
+	});
+
 });
