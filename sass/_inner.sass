@@ -577,12 +577,23 @@
 		padding-top: 50px
 .catalog
 	position: relative
+	display: block
 	margin-bottom: 160px
 	width: 300px
 	height: 300px
 	+r(1550)
 		width: 200px
 		height: 200px
+	&:hover
+		.catalog__name
+			border-color: transparent 
+		.catalog__fig
+			.is-visible-img
+				opacity: 0
+			.is-hidden-img
+				+scale(1)
+				opacity: 1
+
 .catalog__media
 	img
 		display: block
@@ -592,11 +603,26 @@
 	position: absolute
 	bottom: -30px
 	right: -30px
+	width: 300px
+	height: 300px
+	+r(1550)
+		width: 200px
+		height: 200px
 	img
-		display: block
-		max-width: 300px
-		+r(1550)
-			max-width: 200px
+		position: absolute
+		left: 0
+		top: 0
+		width: 100%
+		height: auto
+		&.is-visible-img
+			+scale(.9)
+			will-change: transform, opacity
+			+transition(transform .2s linear, opacity .2s linear)
+		&.is-hidden-img
+			+scale(0)
+			opacity: 0
+			will-change: transform, opacity
+			+transition(transform .2s linear, opacity .2s linear)
 .catalog__name	
 	position: absolute
 	z-index: 2

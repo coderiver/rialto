@@ -421,14 +421,19 @@ a { text-decoration: none; }
 .catalog-col { position: relative; float: left; width: 33.3%; }
 .catalog-col:nth-child(2) { padding-top: 50px; }
 
-.catalog { position: relative; margin-bottom: 160px; width: 300px; height: 300px; }
+.catalog { position: relative; display: block; margin-bottom: 160px; width: 300px; height: 300px; }
 @media only screen and (max-width: 1550px) { .catalog { width: 200px; height: 200px; } }
+.catalog:hover .catalog__name { border-color: transparent; }
+.catalog:hover .catalog__fig .is-visible-img { opacity: 0; }
+.catalog:hover .catalog__fig .is-hidden-img { -ms-transform: scale(1); -webkit-transform: scale(1); transform: scale(1); opacity: 1; }
 
 .catalog__media img { display: block; width: 100%; height: auto; }
 
-.catalog__fig { position: absolute; bottom: -30px; right: -30px; }
-.catalog__fig img { display: block; max-width: 300px; }
-@media only screen and (max-width: 1550px) { .catalog__fig img { max-width: 200px; } }
+.catalog__fig { position: absolute; bottom: -30px; right: -30px; width: 300px; height: 300px; }
+@media only screen and (max-width: 1550px) { .catalog__fig { width: 200px; height: 200px; } }
+.catalog__fig img { position: absolute; left: 0; top: 0; width: 100%; height: auto; }
+.catalog__fig img.is-visible-img { -ms-transform: scale(0.9); -webkit-transform: scale(0.9); transform: scale(0.9); will-change: transform, opacity; -moz-transition: -moz-transform 0.2s linear, opacity 0.2s linear; -o-transition: -o-transform 0.2s linear, opacity 0.2s linear; -webkit-transition: -webkit-transform 0.2s linear, opacity 0.2s linear; transition: transform 0.2s linear, opacity 0.2s linear; }
+.catalog__fig img.is-hidden-img { -ms-transform: scale(0); -webkit-transform: scale(0); transform: scale(0); opacity: 0; will-change: transform, opacity; -moz-transition: -moz-transform 0.2s linear, opacity 0.2s linear; -o-transition: -o-transform 0.2s linear, opacity 0.2s linear; -webkit-transition: -webkit-transform 0.2s linear, opacity 0.2s linear; transition: transform 0.2s linear, opacity 0.2s linear; }
 
 .catalog__name { position: absolute; z-index: 2; bottom: 24px; right: -62px; border-bottom: 1px solid; color: white; line-height: 1; font-size: 40px; font-family: "farreronsserif-light", Arial, sans-serif; -moz-transition: border 0.3s; -o-transition: border 0.3s; -webkit-transition: border 0.3s; transition: border 0.3s; }
 .catalog__name:hover { border-color: transparent; }
