@@ -267,12 +267,24 @@ $(document).ready(function() {
 		$(".js-window").hide().removeAttr("style");
 
 		if (parent.width()-left < width) {
+
 			$("."+win).css({
 				top: top,
 				left: 'auto',
 				right: 0
 			}).fadeIn(500);
+
+			if (parent.width()-left < width && parent.height()-top < height) {
+				$("."+win).css({
+					top: 'auto',
+					left: 'auto',
+					right: 0,
+					bottom: 0
+				}).fadeIn(500);
+			}
+			
 		}
+
 		else if (parent.height()-top < height) {
 			$("."+win).css({
 				top: 'auto',
@@ -281,14 +293,7 @@ $(document).ready(function() {
 				bottom: 0
 			}).fadeIn(500);
 		}
-		else if (parent.width()-left < width && parent.height()-top < height) {
-			$("."+win).css({
-				top: 'auto',
-				left: 'auto',
-				right: 0,
-				bottom: 0
-			}).fadeIn(500);
-		}
+		
 		else {
 			$("."+win).css({
 				top: top,
