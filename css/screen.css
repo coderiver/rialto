@@ -61,6 +61,8 @@ a { text-decoration: none; }
 .menu::-webkit-scrollbar-track-piece { width: 3px; }
 .menu.is-active { -moz-transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0); }
 .menu .btn { margin-top: 22px; }
+.menu .l-center { max-width: 100%; padding: 0 220px; }
+@media only screen and (max-width: 1400px) { .menu .l-center { padding: 0 180px; } }
 
 .menu__col { float: left; margin-right: 100px; }
 
