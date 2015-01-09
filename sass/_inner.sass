@@ -130,7 +130,11 @@
 	line-height: 1
 	+light
 .item__descr
+	display: block
+	color: #fff 
 	margin-bottom: 40px
+	&:hover
+		text-decoration: underline
 	+r(1400)
 		margin-bottom: 20px
 .item__link
@@ -154,9 +158,13 @@
 	z-index: 2
 	+hel
 	font-size: 12px
+	letter-spacing: 1px 
 	color: #fff 
 	color: rgba(#fff,.5) 
 	+tr_c
+	span
+		padding: 0 10px 
+		color: $brown 
 .item__more
 	position: absolute
 	bottom: 150px
@@ -296,7 +304,7 @@
 	img
 		display: block
 		margin: 50px auto 30px
-		max-width: 100%
+		width: 100%
 		height: auto
 	blockquote
 		margin: 32px 0 
@@ -352,6 +360,7 @@
 	left: -20px
 	right: -20px
 	bottom: -20px
+	padding: 0 20px 
 	background: #d1972f 
 	p
 		text-transform: uppercase
@@ -361,7 +370,7 @@
 		color: #fff 
 .feedback__reload
 	display: inline-block
-	margin: 40px 0 0 
+	margin: 40px 0 0
 	+s(reload)
 	+tr(transform .1s)
 	will-change: transform
