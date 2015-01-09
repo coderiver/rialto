@@ -30,7 +30,8 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 @font-face { font-family: farreronsserif-lightitalic; src: url("../fonts/farreronsserif-lightitalic.eot"); src: url("../fonts/farreronsserif-lightitalic.eot?#iefix") format("embedded-opentype"), url("../fonts/farreronsserif-lightitalic.woff2") format("woff2"), url("../fonts/farreronsserif-lightitalic.woff") format("woff"), url("../fonts/farreronsserif-lightitalic.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: farreronsserif-light; src: url("../fonts/farreronsserif-light.eot"); src: url("../fonts/farreronsserif-light.eot?#iefix") format("embedded-opentype"), url("../fonts/farreronsserif-light.woff2") format("woff2"), url("../fonts/farreronsserif-light.woff") format("woff"), url("../fonts/farreronsserif-light.ttf") format("truetype"); font-weight: normal; font-style: normal; }
 @font-face { font-family: helveticaneuecyr-roman; src: url("../fonts/helveticaneuecyr-roman.eot"); src: url("../fonts/helveticaneuecyr-roman.eot?#iefix") format("embedded-opentype"), url("../fonts/helveticaneuecyr-roman.woff2") format("woff2"), url("../fonts/helveticaneuecyr-roman.woff") format("woff"), url("../fonts/helveticaneuecyr-roman.ttf") format("truetype"); font-weight: normal; font-style: normal; }
-.has-open-nav .line-bg, .has-open-nav .header__top, .has-open-nav .footer { background: #1f1a17 !important; }
+.has-open-nav .line-bg, .has-open-nav .header__top, .has-open-nav .footer { background: #1f1a17 !important; pointer-events: none; }
+.has-open-nav .out { pointer-events: none; }
 
 html::-webkit-scrollbar { width: 3px; height: 3px; background: none; }
 html::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.5); }
@@ -155,12 +156,10 @@ a { text-decoration: none; }
 .popup::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.5); }
 .popup::-webkit-scrollbar-track-piece { width: 3px; }
 
-.popup__in { display: inline-block; position: relative; vertical-align: middle; width: 380px; font-size: 12px; }
+.popup__in { display: inline-block; padding: 50px 100px; position: relative; vertical-align: middle; width: 580px; font-size: 12px; }
 
-.popup__close { position: absolute; right: -105px; top: -50px; background: url('../img/icons-sebd5926d0f.png') 0 -156px no-repeat; width: 20px; height: 20px; will-change: transform; -moz-transition: -moz-transform 0.3s; -o-transition: -o-transform 0.3s; -webkit-transition: -webkit-transform 0.3s; transition: transform 0.3s; }
+.popup__close { position: absolute; right: -5px; top: 0; background: url('../img/icons-sebd5926d0f.png') 0 -156px no-repeat; width: 20px; height: 20px; will-change: transform; -moz-transition: -moz-transform 0.3s; -o-transition: -o-transform 0.3s; -webkit-transition: -webkit-transform 0.3s; transition: transform 0.3s; }
 .popup__close:hover { -ms-transform: rotate(90deg); -webkit-transform: rotate(90deg); transform: rotate(90deg); }
-@media only screen and (max-width: 1200px) { .popup__close { right: -40px; } }
-@media only screen and (max-height: 800px) { .popup__close { top: -40px; } }
 
 .popup__title { margin-bottom: 28px; font-size: 30px; color: white; font-family: "farreronsserif-light", Arial, sans-serif; }
 

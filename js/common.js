@@ -4,6 +4,7 @@ $(document).ready(function() {
 		$(".js-menu").removeClass("is-active");
 		$("html").removeClass("has-open-nav");
 		$(".js-menu-toggle").removeClass("is-active");
+		$(".js-popup").fadeOut(300);
 	});
 
 	function scrollFixedElements() {

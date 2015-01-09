@@ -77,6 +77,9 @@ $gray: #625c57
 	.header__top,
 	.footer
 		background: #1f1a17 !important
+		pointer-events: none
+	.out
+		pointer-events: none
 // .has-open-popup
 // 	overflow: hidden
 // 	body
@@ -472,23 +475,20 @@ a
 		width: 3px 
 .popup__in
 	display: inline-block
+	padding: 50px 100px 
 	position: relative
 	vertical-align: middle
-	width: 380px
+	width: 580px
 	font-size: 12px
 .popup__close
 	position: absolute
-	right: -105px
-	top: -50px
+	right: -5px
+	top: 0
 	+s(close)
 	will-change: transform
 	+tr(transform .3s)
 	&:hover
 		+rotate(90)
-	+r(1200)
-		right: -40px
-	+rh(800)
-		top: -40px
 .popup__title
 	margin-bottom: 28px
 	font-size: 30px
