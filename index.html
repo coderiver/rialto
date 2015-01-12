@@ -70,7 +70,7 @@
 						<a href="mailto:rialto@rialtogroup.by">rialto@rialtogroup.by</a>
 					</div>
 				</div>
-				<a href="#" class="btn">Обратный звонок</a>
+				<a href="js-popup-feedback" class="btn js-popup-link">Обратный звонок</a>
 			</div>
 		</div>
 	</div>
@@ -238,6 +238,24 @@
 	<i class="line-bg line-bg_left js-hover"></i>
 	<i class="line-bg line-bg_right js-hover"></i>
 
+	<div class="popup js-popup" data-popup="js-popup-feedback">
+		<div class="popup__in">
+			<div class="popup__title">Заказать звонок </div>
+			<form class="js-validate">
+				<div class="field">
+					<input class="input" type="text" placeholder="Имя" required>
+				</div>
+				<div class="field">
+					<input class="input" type="tel" placeholder="телефон" required>
+				</div>
+				<div class="field">
+					<textarea class="input input input_textarea" placeholder="Здравствуйте, я..."></textarea>
+				</div>
+				<button class="btn btn_white btn_width" type="submit">отправить</button>
+			</form>
+			<button type="button" class="popup__close js-popup-close"></button>
+		</div>
+	</div>
 
 	<script src="js/lib/head.js"></script>
 </body>
