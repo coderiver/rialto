@@ -143,7 +143,9 @@ $(document).ready(function() {
  		} );
  	}
 	
-
+ 	setTimeout(function() {
+        $(".out").addClass("has-overflow");
+    }, 2000);
 
 // popups
 	$(".js-popup-link").on("click", function(){

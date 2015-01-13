@@ -1,8 +1,10 @@
 .out
 	position: relative
-	overflow: hidden
+	&.has-overflow
+		overflow: hidden
 .item-wrap
 	+clr
+	width: 100%
 .item-wrap .item.shown,
 .no-js .item-wrap .item,
 .no-cssanimations .item-wrap .item
@@ -11,7 +13,7 @@
 .has-animation
 	.item
 		opacity: 0
-		will-change: transform
+		will-change: transform, opacity
 		&.animate
 			+transform(translateY(200px))
 			+animation(moveUp 0.65s ease forwards)
@@ -23,13 +25,15 @@
 		opacity: 1
 .item
 	position: relative
-	float: left
+	//float: left
 	width: 50%
+	overflow: hidden
 	background: #231e1b
 	&:hover
 		.item__more
 			opacity: 1
 			right: -40px
+			will-change: opacity
 		.item__info
 			color: #fff 
 	.breadcrumbs

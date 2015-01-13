@@ -237,14 +237,15 @@ a { text-decoration: none; }
 .nav__counter span { float: left; width: 50%; text-align: right; }
 .nav__counter span:first-child { text-align: left; }
 
-.out { position: relative; overflow: hidden; }
+.out { position: relative; }
+.out.has-overflow { overflow: hidden; }
 
-.item-wrap { *zoom: 1; }
+.item-wrap { *zoom: 1; width: 100%; }
 .item-wrap:after { content: " "; display: table; clear: both; }
 
 .item-wrap .item.shown, .no-js .item-wrap .item, .no-cssanimations .item-wrap .item { opacity: 1; }
 
-.has-animation .item { opacity: 0; will-change: transform; }
+.has-animation .item { opacity: 0; will-change: transform, opacity; }
 .has-animation .item.animate { -moz-transform: translateY(200px); -ms-transform: translateY(200px); -webkit-transform: translateY(200px); transform: translateY(200px); -webkit-animation: moveUp 0.65s ease forwards; -moz-animation: moveUp 0.65s ease forwards; -ms-animation: moveUp 0.65s ease forwards; -o-animation: moveUp 0.65s ease forwards; animation: moveUp 0.65s ease forwards; }
 
 @-moz-keyframes moveUp { 100% { -moz-transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; } }
@@ -252,8 +253,8 @@ a { text-decoration: none; }
 @-o-keyframes moveUp { 100% { -moz-transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; } }
 @-ms-keyframes moveUp { 100% { -moz-transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; } }
 @keyframes moveUp { 100% { -moz-transform: translateY(0); -ms-transform: translateY(0); -webkit-transform: translateY(0); transform: translateY(0); opacity: 1; } }
-.item { position: relative; float: left; width: 50%; background: #231e1b; }
-.item:hover .item__more { opacity: 1; right: -40px; }
+.item { position: relative; width: 50%; overflow: hidden; background: #231e1b; }
+.item:hover .item__more { opacity: 1; right: -40px; will-change: opacity; }
 .item:hover .item__info { color: #fff; }
 .item .breadcrumbs { position: absolute; left: 220px; top: 105px; }
 @media only screen and (max-width: 1400px) { .item .breadcrumbs { left: 180px; } }
