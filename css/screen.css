@@ -33,12 +33,6 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 .has-open-nav .line-bg, .has-open-nav .header__top, .has-open-nav .footer { background: #1f1a17 !important; pointer-events: none; }
 .has-open-nav .out { pointer-events: none; }
 
-html::-webkit-scrollbar { width: 3px; height: 3px; background: none; }
-html::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.5); }
-html::-webkit-scrollbar-track-piece { width: 3px; }
-html ::selection { background: rgba(188, 132, 32, 0.2); }
-html ::-moz-selection { background: rgba(188, 132, 32, 0.2); }
-
 body { min-width: 1024px; font-family: "helveticaneuecyr-roman", Arial, sans-serif; font-size: 12px; line-height: 1.8; letter-spacing: 2px; color: #fff; color: rgba(255, 255, 255, 0.5); background: #423b38; }
 
 .index-page { margin: 0; padding: 0; overflow: hidden; -webkit-tap-highlight-color: transparent; }
@@ -238,10 +232,8 @@ a { text-decoration: none; }
 .nav__counter span:first-child { text-align: left; }
 
 .out { position: relative; }
-.out.has-overflow { overflow: hidden; }
 
-.item-wrap { *zoom: 1; width: 100%; }
-.item-wrap:after { content: " "; display: table; clear: both; }
+.item-wrap { width: 100%; max-width: 100%; }
 
 .item-wrap .item.shown, .no-js .item-wrap .item, .no-cssanimations .item-wrap .item { opacity: 1; }
 

@@ -136,11 +136,17 @@ $(document).ready(function() {
 	
 
  	if ($("#js-masonry-animate").length) {
- 		new AnimOnScroll( document.getElementById( 'js-masonry-animate' ), {
- 			minDuration : 0.4,
- 			maxDuration : 0.7,
- 			viewportFactor : 0.2
- 		} );
+ 		var $container = $('#js-masonry-animate');
+ 		
+ 		// initialize Masonry after all images have loaded  
+ 		$container.imagesLoaded( function() {
+ 			new AnimOnScroll( document.getElementById( 'js-masonry-animate' ), {
+ 				minDuration : 0.4,
+ 				maxDuration : 0.7,
+ 				viewportFactor : 0.2
+ 			} );
+ 		});
+ 		
  	}
 	
 // popups
