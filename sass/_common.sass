@@ -9,7 +9,7 @@
 //           +rotate(0)
 //        to
 //           +rotate(360)
-// ## animation usage
+// ## animation usagef
 //     body:hover
 // 	    +animation(rotate 200s linear infinite)
 // ## animations easing, see easings.net for full list and examples, tnx @ai
@@ -85,14 +85,14 @@ $gray: #625c57
 // 	body
 // 		overflow: hidden
 html
-	+scrollbar
-		width: 3px
-		height: 3px
-		background: none
-	+scrollbar-thumb
-		background: rgba(#fff, .5)
-	+scrollbar-track-piece     
-		width: 3px 
+	// +scrollbar
+	// 	width: 3px
+	// 	height: 3px
+	// 	background: none
+	// +scrollbar-thumb
+	// 	background: rgba(#fff, .5)
+	// +scrollbar-track-piece     
+	// 	width: 3px 
 	+selection
 		background: rgba($brown,.2) 
 body
@@ -172,12 +172,14 @@ a
 		margin-top: 22px
 	.l-center
 		max-width: 100%
-		padding: 0 220px
+		padding-left: 220px
 		+r(1400)
-			padding: 0 180px 
+			padding-left: 180px
 .menu__col
 	float: left
 	margin-right: 100px
+	&:last-child
+		margin-right: 0
 .menu__title
 	margin-bottom: 63px
 	font-size: 30px

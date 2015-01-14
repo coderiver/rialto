@@ -120,18 +120,16 @@ $(document).ready(function() {
 		event.stopPropagation();
 	});
 
-// masonry init
- 	// var $container = $('.js-masonry');
- 	// if ($container.length) {
- 	// 	$container.imagesLoaded( function() {
- 	// 		// initialize
- 	// 		$container.masonry({
- 	// 			itemSelector: '.js-masonry-item',
- 	// 			columnWidth: ".js-masonry-item",
- 	// 			gutter: 0
- 	// 		});
- 	// 	});
- 	// }
+//masonry init
+ 	//masonry init
+ 	var $container = $('.js-masonry');
+	// initialize
+	$container.masonry({
+		itemSelector: '.js-masonry-item',
+		gutter: 0
+	});
+		
+
 		
 	
 
