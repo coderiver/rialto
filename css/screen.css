@@ -238,7 +238,7 @@ a { text-decoration: none; }
 .nav__counter span { float: left; width: 50%; text-align: right; }
 .nav__counter span:first-child { text-align: left; }
 
-.out { position: relatives; }
+.out { position: relative; }
 
 .item-wrap { width: 100%; max-width: 100%; }
 
