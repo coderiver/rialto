@@ -119,7 +119,9 @@ $(document).ready(function() {
 	$(".js-menu").on("click", function(event){
 		event.stopPropagation();
 	});
-
+	$(".footer").on("click", function(event){
+		event.stopPropagation();
+	});
 //masonry init
  	//masonry init
  	var $container = $('.js-masonry');
