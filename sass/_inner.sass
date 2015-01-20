@@ -1,5 +1,6 @@
 .out
 	position: relative
+	overflow: hidden
 .item-wrap
 	width: 100%
 	max-width: 100%
@@ -188,7 +189,8 @@
 	overflow-y: auto
 	margin-right: 3px
 	height: 100%
-	padding-right: 60px
+	max-height: 100%
+	//padding-right: 60px
 	letter-spacing: 1px 
 	+scrollbar
 		width: 3px
@@ -206,6 +208,8 @@
 	.article
 		padding: 5px 0 
 		opacity: .5
+.page-info__in
+	padding-right: 60px
 .page-info__title
 	position: relative
 	margin-bottom: 55px

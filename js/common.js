@@ -334,4 +334,10 @@ $(document).ready(function() {
 		return false;
 	});
 
+	if ($('.js-scroll-pane').length) {
+		$('.js-scroll-pane').jScrollPane();
+	}
+	
+
+
 });
