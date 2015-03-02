@@ -65,6 +65,7 @@ $(document).ready(function() {
 			responsive: 1,
 			easing: 'easeInQuart',
 			easingcss3: 'ease-in-out',
+			normalScrollElements: '.js-menu',
 			onLeave: function(index, nextIndex, direction){
 				$(".js-nav-curent").text(nextIndex);
 			},
@@ -126,10 +127,13 @@ $(document).ready(function() {
  	//masonry init
  	var $container = $('.js-masonry');
 	// initialize
-	$container.masonry({
-		itemSelector: '.js-masonry-item',
-		gutter: 0
-	});
+	if ($container.length) {
+		$container.masonry({
+			itemSelector: '.js-masonry-item',
+			gutter: 0
+		});
+	}
+	
 		
 
 		
